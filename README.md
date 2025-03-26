@@ -16,8 +16,13 @@ Một ứng dụng web giúp bạn quản lý và luyện tập từ vựng ti�
 - Laragon (hoặc XAMPP để chạy local)
 
 ---
-## DEMO
-http://learningvocabulary.free.nf/Learning_Vocab/auth/login
+
+## 🚀 Demo
+
+[![Xem trang web](https://img.shields.io/badge/Xem%20trang%20web-%F0%9F%9A%80-blue?style=for-the-badge)](http://learningvocabulary.free.nf/Learning_Vocab/auth/login)
+
+
+
 ---
 
 ## ⚙️ Cài đặt & chạy local
