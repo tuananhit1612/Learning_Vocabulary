@@ -28,6 +28,7 @@
                 <div class="mb-3">
                     <label class="form-label">🔑 API Key (Gemini)</label>
                     <input type="text" name="api_key" class="form-control" required>
+                    <p class="text-xs opacity-80 mt-3">Bạn có thể lấy API Key từ <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold dark:text-blue-400">Google AI Studio</a></p>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">🚀 Đăng ký</button>
