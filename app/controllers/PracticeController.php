@@ -32,27 +32,50 @@ class PracticeController {
             $questions = [];
 
             foreach ($words as $word) {
+                $direction = rand(0, 1) === 0 ? 'en_to_vi' : 'vi_to_en';
+
                 if ($mode === 'multiple') {
-                    $correct = $word['vietnamese_word'];
-                    $choices = [$correct];
-                    $others = $this->model->getWrongChoices($word['id'], 3, $userId);
-                    foreach ($others as $w) {
-                        $choices[] = $w['vietnamese_word'];
+                    if ($direction === 'en_to_vi') {
+                        $correct = $word['vietnamese_word'];
+                        $choices = [$correct];
+
+                        $others = $this->model->getWrongChoices($word['id'], 3, $userId);
+                        foreach ($others as $w) {
+                            $choices[] = $w['vietnamese_word'];
+                        }
+
+                        shuffle($choices);
+                        $questions[] = [
+                            'type' => 'multiple',
+                            'direction' => 'en_to_vi',
+                            'question' => $word['english_word'],
+                            'correct' => $correct,
+                            'choices' => $choices
+                        ];
+                    } else {
+                        $correct = $word['english_word'];
+                        $choices = [$correct];
+
+                        $others = $this->model->getWrongChoices($word['id'], 3, $userId);
+                        foreach ($others as $w) {
+                            $choices[] = $w['english_word'];
+                        }
+
+                        shuffle($choices);
+                        $questions[] = [
+                            'type' => 'multiple',
+                            'direction' => 'vi_to_en',
+                            'question' => $word['vietnamese_word'],
+                            'correct' => $correct,
+                            'choices' => $choices
+                        ];
                     }
-                    shuffle($choices);
-                    $questions[] = [
-                        'type' => 'multiple',
-                        'direction' => 'en_to_vi',
-                        'question' => $word['english_word'],
-                        'correct' => $correct,
-                        'choices' => $choices
-                    ];
-                } else {
+                } else { // mode === typing
                     $questions[] = [
                         'type' => 'typing',
-                        'direction' => 'vi_to_en',
-                        'question' => $word['vietnamese_word'],
-                        'correct' => $word['english_word'],
+                        'direction' => $direction,
+                        'question' => $direction === 'en_to_vi' ? $word['english_word'] : $word['vietnamese_word'],
+                        'correct' => $direction === 'en_to_vi' ? $word['vietnamese_word'] : $word['english_word'],
                     ];
                 }
             }
@@ -65,6 +88,7 @@ class PracticeController {
             echo "Vui lòng chọn số câu hỏi.";
         }
     }
+
 
     public function record() {
         $this->checkLogin();
