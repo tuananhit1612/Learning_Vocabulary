@@ -38,6 +38,8 @@ $password = '';
 - Tải Laragon
 - Đặt thư mục vào C:\laragon\www\Learning_Vocab
 - Truy cập tại: http://localhost/Learning_Vocab
+  
+---
 
 ## 🌟 Các tính năng chính
 ### ✅ Đăng ký & đăng nhập
@@ -60,7 +62,10 @@ $password = '';
 
 ### 📊 Thống kê học tập
 - Số từ đã học, cần học lại, chưa học
-- 
-### 📬 Góp ý & đóng góp
-Nếu bạn có ý tưởng mới hoặc muốn đóng góp thêm, hãy tạo Issue hoặc Pull Request nha!
+
+---
+
+### 🎓 Ghi chú
+📘 Dự án này được thực hiện sau khi hoàn thành môn học **phát triển phần mềm Mã nguồn mở** tại trường đại học.  
+Nó là sản phẩm kết hợp giữa lý thuyết và thực hành, đồng thời giúp rèn luyện tư duy thiết kế ứng dụng web thực tế.
 
