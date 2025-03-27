@@ -115,7 +115,6 @@
         });
 
     <?php else: ?>
-        // TYPING MODE
         document.getElementById("typingForm").onsubmit = function(e) {
             e.preventDefault();
             const input = this.userAnswer.value.trim();
@@ -139,15 +138,11 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     question: <?= json_encode($question['question']) ?>,
-                    word: questionWord,
+                    word: correctAnswer,
                     correct: correctAnswer,
                     chosen: input
                 })
             });
-
-
-
-
         }
     <?php endif; ?>
 </script>
