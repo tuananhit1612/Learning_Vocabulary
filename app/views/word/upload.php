@@ -14,11 +14,14 @@
             <label class="form-label">🔢 Số lượng từ vựng cần trích:</label>
             <input type="number" name="num_words" min="1" max="100" value="10" class="form-control" required>
         </div>
+        <div class="mb-3">
+            <label class="form-label">📝 Mô tả:</label>
+            <input type="text" value="Đây là 1 file bài học, hãy lấy từ cần học ở bản từ vựng ở phía cuối file" name="describe_pdf" class="form-control" placeholder="Mô tả từ vựng bạn muốn lấy từ file PDF"  required>
+        </div>
 
         <button type="submit" class="btn btn-primary w-100">📤 Gửi đến AI</button>
     </form>
 
-    <!-- Nếu có kết quả từ AI -->
     <?php if (isset($aiResponse) && count($aiResponse)): ?>
         <div class="card p-4 shadow-sm">
             <h3 class="fw-bold mb-4">📑 Danh sách từ vựng đã trích từ AI</h3>

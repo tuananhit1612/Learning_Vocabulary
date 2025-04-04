@@ -17,7 +17,7 @@
             <!-- Nhập số lượng câu hỏi -->
             <div class="mb-3">
                 <label class="form-label">📌 Số lượng câu hỏi:</label>
-                <input type="number" name="num_questions" min="1" max="20" class="form-control" placeholder="Ví dụ: 10" required>
+                <input type="number" name="num_questions" min="10" max="50" class="form-control" placeholder="Ví dụ: 10" required>
             </div>
 
             <button type="submit" class="btn btn-success w-100">

@@ -56,10 +56,11 @@ class WordController {
         $pdfPath = $_FILES['pdf_file']['tmp_name'];
         $text = $this->readPdfText($pdfPath);
         $numWords = $_POST['num_words'] ?? 10;
+        $describePdf = $_POST['describe_pdf'] ?? "Hãy bỏ qua phần mở đầu, ví dụ như tiêu đề, đề bài, phần giới thiệu,... và tập trung lấy từ bảng từ vựng thường xuất hiện ở cuối.";
 
-        $prompt = "Bạn là một trợ lý học từ vựng tiếng Anh.
+        $prompt = "Bạn là một trợ lý học từ vựng tiếng Anh. {$describePdf}
 
-        Dưới đây là nội dung một bài học hoặc bài kiểm tra. Hãy bỏ qua phần mở đầu, ví dụ như tiêu đề, đề bài, phần giới thiệu,... và tập trung lấy từ bảng từ vựng thường xuất hiện ở cuối.
+        Dưới đây là nội dung một bài học hoặc bài kiểm tra.
 
         🎯 Yêu cầu
         - Trích ra {$numWords} từ vựng quan trọng nhất.
